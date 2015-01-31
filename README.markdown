@@ -3,9 +3,9 @@ fxiedlist: fast performance fixed list for Redis
 
 This Python library makes it possible to implement a fast fixed list structure for Redis with following properties:
 
-* Fixed size of the list
 * Fast inserts, updates and fetches
-* Small memory footprint with gziped data
+* 2x faster perfomance than pure Redis implementation
+* 1.4x less memory footpring (due to gziped data)
 * No duplicates inside the list
 
 Requires Redis 2.6+ and newest version of redis-py.
@@ -19,6 +19,21 @@ Can be installed very easily via:
     $ pip install fixedlist
 
 
+Benchmark
+=========
+Testing fixedlist against a pure Redis implementaiton of a fixedlist yields good results.
+
+The benchmarks are in the `benchmark/` folder and they store 300 lists with 200 values each. The lists are int and strings lists.
+
+* fixedlist is about 2.4x faster (47s vs. 117s on a Mac Book Pro from 2014)
+* fixedlist uses 1.4x less memory (1.24MB vs. 1.84MB)
+
+The benchmark is run in a following way:
+* time python benchmark/benchmark_fixed_list.py
+* time python benchmark/benchmark_python_redis.py
+
+Redis stats are fetched from `redis-cli info` command.
+
 
 Examples
 ========
@@ -27,7 +42,7 @@ Setting things up:
 
 ```python
 import fixedlist
-fixedlist.set_redis(host='locahost', port='localhost')
+fixedlist.set_redis(redis_host='locahost', redis_port=6380)
 ```
 
 Add a value to a list:
