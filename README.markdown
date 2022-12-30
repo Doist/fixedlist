@@ -110,6 +110,11 @@ List removing/resetting:
 * `fixedlist.empty(list_keys, system='default')`: Empty the values of `list_keys`
 * `fixedlist.varnish(list_keys, system='default')`: Delete `list_keys` keys
 
+Caveat
+======
+
+Values should not contain the raw `~` character as this is used internally as
+a list separator.
 
 Copyright
 =========
