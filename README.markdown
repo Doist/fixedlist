@@ -5,7 +5,7 @@ This Python library makes it possible to implement a fast fixed list structure f
 
 * Fast inserts, updates and fetches
 * 2x faster perfomance than pure Redis implementation
-* 1.4x less memory footpring (due to gziped data)
+* 1.4x less memory footprint (due to gziped data)
 * No duplicates inside the list
 
 Requires Redis 2.6+ and newest version of redis-py.
