@@ -72,8 +72,8 @@ assert fixedlist.get_multi(['hello1', 'hello2']) ==\
 Remove a value:
 
 ```python
-fixedlist.remove('hello', 'world1')
-assert fixedlist.get('hello') == ['world2']
+fixedlist.remove('hello1', 'world1')
+assert fixedlist.get('hello1') == ['world2']
 ```
 
 Handle duplicates
