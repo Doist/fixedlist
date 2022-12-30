@@ -130,7 +130,7 @@ def remove(list_keys, values_to_remove, system='default', retries=DEFAULT_RETRIE
     return _multi_list_op(list_keys, values_to_remove, modify, check, system, None, retries)
 
 def set(list_keys, values, system='default'):
-    """Set lists with kyes `list_keys` to `values`.
+    """Set lists with keys `list_keys` to `values`.
 
     Example::
 
